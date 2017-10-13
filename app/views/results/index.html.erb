@@ -1,0 +1,4 @@
+<%= form_tag('/results', method: :post, multipart: true, role: "form") do %>
+  <%= button_tag 'Write to file', name: 'route_to[cat]'%>
+<% end %>
+<div><%= @results %></div>
