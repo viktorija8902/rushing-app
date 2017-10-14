@@ -1,4 +1,24 @@
-<%= form_tag('/results', method: :post, multipart: true, role: "form") do %>
-  <%= button_tag 'Write to file', name: 'route_to[cat]'%>
+<%= form_tag("/results", method: :post, multipart: true, role: "form") do %>
+  <%= button_tag "Write to file" %>
 <% end %>
-<div><%= @results %></div>
+
+<div id="results-table">
+  <div>Player</div>
+  <div>Team</div>
+  <div>Pos</div>
+  <div>Att</div>
+  <div>Att/G</div>
+  <div>Yds</div>
+  <button sortby="Yds" onclick="sortTable(this)">Yds</button>
+  <div>Avg</div>
+  <div>Yds/G</div>
+  <button sortby="TD" onclick="sortTable(this)">TD</button>
+  <button sortby="Lng" onclick="sortTable(this)">Lng</button>
+  <div>1st</div>
+  <div>1st%</div>
+  <div>20+</div>
+  <div>40+</div>
+  <div>FUM</div>
+
+  <%= render "results" %>
+</div>

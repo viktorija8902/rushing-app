@@ -1,0 +1,28 @@
+function sortTable(button) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/results" + "?sort_by=" + button.getAttribute("sortby"), true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        deleteOldTableData();
+        showNewTableData(xhr.responseText);
+      } else {
+        alert("There was a problem with the request.");
+      }
+    }
+  }
+  xhr.send();
+}
+
+function deleteOldTableData() {
+  var oldResults = document.getElementById("results");
+  oldResults && oldResults.remove();
+}
+
+function showNewTableData(results) {
+  var resultsTable = document.getElementById("results-table");
+  var newResults = document.createElement("div");
+  newResults.setAttribute("id", "results");
+  newResults.innerHTML = results
+  resultsTable.appendChild(newResults);
+}
