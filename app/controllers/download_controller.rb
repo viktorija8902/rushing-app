@@ -9,6 +9,6 @@ class DownloadController < ApplicationController
 
   private
     def user_params
-      params.permit(:filter, :sort_by)
+      params.permit(:filter, :sort_by, :desc)
     end
 end
