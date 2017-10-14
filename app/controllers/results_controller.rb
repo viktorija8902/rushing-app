@@ -6,9 +6,4 @@ class ResultsController < ApplicationController
       render partial: "results"
     end
   end
-
-  def create
-    how_its_sorted = 'NOT_SORTED'
-    FileWriter.write_to_file(how_its_sorted)
-  end
 end

@@ -1,11 +1,13 @@
 var PLAYER_NAME = "";
+var SORT_BY = "";
 
-function sortTable(button) {
+function updateResults(button) {
   if (button.getAttribute("filter")) {
     PLAYER_NAME = document.getElementById("player-name").value;
   }
+  SORT_BY = button.getAttribute("sortby");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/results" + "?filter=" + PLAYER_NAME + "&sort_by=" + button.getAttribute("sortby"), true);
+  xhr.open("GET", "/results" + "?filter=" + PLAYER_NAME + "&sort_by=" + SORT_BY, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
@@ -28,6 +30,10 @@ function showNewTableData(results) {
   var resultsTable = document.getElementById("results-table");
   var newResults = document.createElement("div");
   newResults.setAttribute("id", "results");
-  newResults.innerHTML = results
+  newResults.innerHTML = results;
   resultsTable.appendChild(newResults);
+}
+
+function downloadResults(button) {
+  location.href = "/download" + "?filter=" + PLAYER_NAME + "&sort_by=" + SORT_BY;
 }

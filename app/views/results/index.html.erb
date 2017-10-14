@@ -1,9 +1,7 @@
-<%= form_tag("/results", method: :post, multipart: true, role: "form") do %>
-  <%= button_tag "Write to file" %>
-<% end %>
+<button onclick="downloadResults(this)">Download</button>
 
 <input id="player-name" type="text"><br>
-<button filter="player-name" onclick="sortTable(this)">Filter</button>
+<button filter="player-name" onclick="updateResults(this)">Filter</button>
 
 <div id="results-table">
   <div>Player</div>
@@ -12,11 +10,11 @@
   <div>Att</div>
   <div>Att/G</div>
   <div>Yds</div>
-  <button sortby="Yds" onclick="sortTable(this)">Yds</button>
+  <button sortby="Yds" onclick="updateResults(this)">Yds</button>
   <div>Avg</div>
   <div>Yds/G</div>
-  <button sortby="TD" onclick="sortTable(this)">TD</button>
-  <button sortby="Lng" onclick="sortTable(this)">Lng</button>
+  <button sortby="TD" onclick="updateResults(this)">TD</button>
+  <button sortby="Lng" onclick="updateResults(this)">Lng</button>
   <div>1st</div>
   <div>1st%</div>
   <div>20+</div>
