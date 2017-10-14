@@ -7,6 +7,14 @@ class ResultsController < ApplicationController
     end
   end
 
+  def download
+    results = FileReader.read_file
+    results = ResultsFilter.filter(results, user_params)
+    send_data CsvGenerator.generate(results),
+              filename: "results.csv",
+              type: "text/csv"
+  end
+
   private
     def user_params
       params.permit(:filter, :sort_by, :desc)
