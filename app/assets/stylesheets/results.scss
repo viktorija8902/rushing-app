@@ -1,0 +1,66 @@
+// variables
+$break-point: 930px;
+$button-color: #3e9ba7;
+$row-color: #dfeef5;
+$first-column-width: 165px;
+
+// common styles
+button {
+  background-color: $button-color;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.column-style {
+  display: inline-block;
+  width: 45px;
+  padding-left: 5px;
+}
+
+#results-page {
+  margin: auto;
+  margin-bottom: 30px;
+  width: $break-point;
+  h1, .name-filter {
+    padding: 3px;
+  }
+  .name-filter {
+    display: flex;
+    input {
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+  }
+  .download-btn {
+    margin-top: 5px;
+  }
+  #results-table {
+    line-height: 2;
+    padding-top: 10px;
+    .column-name {
+      @extend .column-style;
+      font-weight: bold;
+    }
+    .column-name.player-name {
+      width: $first-column-width;
+    }
+    #results {
+      .result {
+        .info {
+          @extend .column-style;
+        }
+        .info.player-name, .info.no-results {
+          width: $first-column-width;
+        }
+      }
+      .result:nth-child(odd) {
+        background: $row-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $break-point) {
+  #results-page {
+    width: 100%;
+  }
+}
