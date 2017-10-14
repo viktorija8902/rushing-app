@@ -1,0 +1,25 @@
+<div id="results">
+  <% if @results == [] %>
+    <div>Nothing found</div>
+  <% else %>
+    <% @results.each do |result|  %>
+      <div class="result">
+        <%= result["Player"] %>
+        <%= result["Team"] %>
+        <%= result["Pos"] %>
+        <%= result["Att"] %>
+        <%= result["Att/G"] %>
+        <%= result["Yds"] %>
+        <%= result["Avg"] %>
+        <%= result["Yds/G"] %>
+        <%= result["TD"] %>
+        <%= result["Lng"] %>
+        <%= result["1st"] %>
+        <%= result["1st%"] %>
+        <%= result["20+"] %>
+        <%= result["40+"] %>
+        <%= result["FUM"] %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
