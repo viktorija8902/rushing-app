@@ -1,5 +1,4 @@
 class ResultsFilter
-  #TODO fix sorting 1 12 2 to 1 2 12
   def self.filter(results, params)
     if params[:filter] != "" && params[:sort_by] != "null"
       results = results.select { |result| result["Player"] == params[:filter] }
@@ -7,7 +6,17 @@ class ResultsFilter
     elsif params[:filter] != ""
       results.select { |result| result["Player"] == params[:filter] }
     elsif params[:sort_by] != "null"
-      results.sort_by { |result| result[params[:sort_by]].to_s }
+      results = results.sort_by { |result|
+        if result[params[:sort_by]].is_a?(String)
+          result[params[:sort_by]].tr(",","").to_i
+        else
+          result[params[:sort_by]].to_i
+        end
+      }
+      if params[:desc] == "true"
+        results.reverse!
+      end
+      results
     else
       results
     end
