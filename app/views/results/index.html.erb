@@ -1,25 +1,30 @@
-<button onclick="downloadResults(this)">Download</button>
+<div id="results-page">
+  <h1>Rushing statistics</h1>
+  <div class="name-filter">
+    <div>Filter by name:</div>
+    <input id="player-name" type="text"><br>
+    <button filter="player-name" onclick="updateResults(this)">Filter</button>
+  </div>
 
-<input id="player-name" type="text"><br>
-<button filter="player-name" onclick="updateResults(this)">Filter</button>
+  <button class="download-btn" onclick="downloadResults(this)">Download results</button>
 
-<div id="results-table">
-  <div>Player</div>
-  <div>Team</div>
-  <div>Pos</div>
-  <div>Att</div>
-  <div>Att/G</div>
-  <div>Yds</div>
-  <button sortby="Yds" onclick="updateResults(this)">Yds</button>
-  <div>Avg</div>
-  <div>Yds/G</div>
-  <button sortby="TD" onclick="updateResults(this)">TD</button>
-  <button sortby="Lng" onclick="updateResults(this)">Lng</button>
-  <div>1st</div>
-  <div>1st%</div>
-  <div>20+</div>
-  <div>40+</div>
-  <div>FUM</div>
+  <div id="results-table">
+    <div class="column-name player-name">Player</div>
+    <div class="column-name">Team</div>
+    <div class="column-name">Pos</div>
+    <div class="column-name">Att</div>
+    <div class="column-name">Att/G</div>
+    <button class="column-name" sortby="Yds" onclick="updateResults(this)">Yds</button>
+    <div class="column-name">Avg</div>
+    <div class="column-name">Yds/G</div>
+    <button class="column-name" sortby="TD" onclick="updateResults(this)">TD</button>
+    <button class="column-name" sortby="Lng" onclick="updateResults(this)">Lng</button>
+    <div class="column-name">1st</div>
+    <div class="column-name">1st%</div>
+    <div class="column-name">20+</div>
+    <div class="column-name">40+</div>
+    <div class="column-name">FUM</div>
 
-  <%= render "results" %>
+    <%= render "results" %>
+  </div>
 </div>

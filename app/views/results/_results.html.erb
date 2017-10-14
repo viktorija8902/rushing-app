@@ -1,24 +1,26 @@
 <div id="results">
   <% if @results == [] %>
-    <div>Nothing found</div>
+    <div class="result">
+      <div class="info no-results">Nothing found</div>
+    </div>
   <% else %>
     <% @results.each do |result|  %>
       <div class="result">
-        <%= result["Player"] %>
-        <%= result["Team"] %>
-        <%= result["Pos"] %>
-        <%= result["Att"] %>
-        <%= result["Att/G"] %>
-        <%= result["Yds"] %>
-        <%= result["Avg"] %>
-        <%= result["Yds/G"] %>
-        <%= result["TD"] %>
-        <%= result["Lng"] %>
-        <%= result["1st"] %>
-        <%= result["1st%"] %>
-        <%= result["20+"] %>
-        <%= result["40+"] %>
-        <%= result["FUM"] %>
+        <div class="info player-name"><%= result["Player"] %></div>
+        <div class="info"><%= result["Team"] %></div>
+        <div class="info"><%= result["Pos"] %></div>
+        <div class="info"><%= result["Att"] %></div>
+        <div class="info"><%= result["Att/G"] %></div>
+        <div class="info"><%= result["Yds"] %></div>
+        <div class="info"><%= result["Avg"] %></div>
+        <div class="info"><%= result["Yds/G"] %></div>
+        <div class="info"><%= result["TD"] %></div>
+        <div class="info"><%= result["Lng"] %></div>
+        <div class="info"><%= result["1st"] %></div>
+        <div class="info"><%= result["1st%"] %></div>
+        <div class="info"><%= result["20+"] %></div>
+        <div class="info"><%= result["40+"] %></div>
+        <div class="info"><%= result["FUM"] %></div>
       </div>
     <% end %>
   <% end %>
