@@ -13,7 +13,7 @@ function updateResults(button) {
     DESC = !DESC;
   }
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/results" + "?filter=" + PLAYER_NAME + "&sort_by=" + SORT_BY + "&desc=" + DESC, true);
+  xhr.open("GET", "/" + "?filter=" + PLAYER_NAME + "&sort_by=" + SORT_BY + "&desc=" + DESC, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
