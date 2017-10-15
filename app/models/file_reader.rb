@@ -1,7 +1,7 @@
 require 'json'
 
 class FileReader
-  def self.read_file
+  def self.read
     file = File.read '../rushing-app/db/rushing.json'
     JSON.parse(file)
   end
