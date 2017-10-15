@@ -4,7 +4,7 @@ class ResultsFilter
       results = filter_by_player(results, params[:filter])
       sort_results(results, params[:sort_by], params[:desc])
     elsif params[:filter] != ""
-      results = filter_by_player(results, params[:filter])
+      filter_by_player(results, params[:filter])
     elsif params[:sort_by] != "null"
       sort_results(results, params[:sort_by], params[:desc])
     else
