@@ -1,4 +1,4 @@
-require 'csv'
+require "csv"
 
 class CsvGenerator
   def self.generate(results)
