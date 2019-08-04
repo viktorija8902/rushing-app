@@ -2,7 +2,7 @@
 
 In this repo is the file [`/db/rushing.json`](/db/rushing.json). It contains data about NFL players' rushing statistics. Each entry contains the following information
 * `Player` (Player's name)
-* `Team` (Player's team abreviation)
+* `Team` (Player's team abbreviation)
 * `Pos` (Player's postion)
 * `Att/G` (Rushing Attempts Per Game Average)
 * `Att` (Rushing Attempts)
